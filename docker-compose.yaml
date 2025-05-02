@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  mcp-atlassian:
+    image: ghcr.io/sooperset/mcp-atlassian:latest
+    container_name: mcp-atlassian
+    restart: unless-stopped
+    env_file:
+      - mcp-atlassian-server.env
+    ports:
+      - "8001:8080"
+  mcp-teams-server:
+    image: ghcr.io/inditextech/mcp-teams-server:latest
+    container_name: mcp-teams-server
+    restart: unless-stopped
+    env_file:
+      - mcp-teams-server.env
+    ports:
+      - "8002:8000"
