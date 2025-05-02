@@ -1,5 +1,13 @@
 version: "3.8"
 services:
+  github-mcp-server:
+    image: ghcr.io/github/github-mcp-server:latest
+    container_name: github-mcp-server
+    restart: unless-stopped
+    env_file:
+      - github-mcp-server.env
+    ports:
+      - "9000:9000"
   mcp-atlassian:
     image: ghcr.io/sooperset/mcp-atlassian:latest
     container_name: mcp-atlassian
@@ -7,7 +15,7 @@ services:
     env_file:
       - mcp-atlassian-server.env
     ports:
-      - "8001:8080"
+      - "9001:8080"
   mcp-teams-server:
     image: ghcr.io/inditextech/mcp-teams-server:latest
     container_name: mcp-teams-server
@@ -15,4 +23,4 @@ services:
     env_file:
       - mcp-teams-server.env
     ports:
-      - "8002:8000"
+      - "9002:8000"

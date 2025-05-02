@@ -2,6 +2,10 @@
 
 My MCP (Model Context Protocol) server setup for local environment to automate anything by LLM.
 
+## GitHub MCP Server
+
+<https://github.com/github/github-mcp-server>
+
 ## Jira/Confluence MCP Server
 
 <https://github.com/sooperset/mcp-atlassian>
